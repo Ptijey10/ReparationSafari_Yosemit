@@ -1,0 +1,38 @@
+Yosemite, Safari, iTunes, iPhoto, iBidules, etc.
+Suite à la mise à jour de iTunes en version 12.8.1 sous Yosemite, beaucoup d'utilisateurs se sont aperçu que Safari ne fonctionnait plus, de même que iPhoto pour ceux et celles qui l'utilisent encore.
+
+Une première solution d'urgence a été trouvée pour permettre à Safari de «retomber en marche».
+
+Cette solution consiste à détruire le fichier MobileDevice que l'on trouve en suivant ce chemin :
+
+disque de démarrage > Système > Bibliothèque > PrivateFrameworks > MobileDevice.framework > Versions > A > MobileDevice
+
+Cette solution permet de récupérer un Safari entièrement fonctionnel mais n'empêche pas iPhoto de continuer à planter et iTunes ne reconnait plus les iBidules (iPhone, iPad, etc.) !
+
+La solution qui règle tout est celle-ci :
+
+ conserver iTunes 12.8.1 ! La réinstallation d'une version précédente ne solutionne rien…
+ supprimer le fichier MobileDevice indiqué ci-dessus
+
+Si vous avez des difficultés à localiser ce fichier, allez dans le Finder et tapez :
+cmd + maj + G
+puis copiez-collez dans la petite fenêtre qui est apparue :
+/System/Library/PrivateFrameworks
+pour accéder au dossier PrivateFrameworks.
+À l'intérieur de ce dossier, vous trouverez ensuite MobileDevice.framework puis Versions puis A et enfin MobileDevice !
+
+
+ télécharger maintenant le fichier compressé MobileDevice.zip en cliquant ici
+ décompresser le fichier MobileDevice.zip ainsi récupéré pour obtenir le fichier MobileDevice
+ copier le fichier MobileDevice et retourner dans :
+disque de démarrage > Système > Bibliothèque > PrivateFrameworks > MobileDevice.framework > Versions > A >
+et coller le fichier MobileDevice dans le dossier A
+
+Au cas où vous auriez eu la mauvaise idée de supprimer complètement le dossier MobileDevice.framework :
+ télécharger le dossier compressé MobileDevice.framework.zip en cliquant ici
+ décompresser le dossier MobileDevice.framework.zip récupéré pour obtenir le dossier MobileDevice.framework
+ copier le dossier MobileDevice.framework et retourner dans :
+disque de démarrage > Système > Bibliothèque > PrivateFrameworks >
+et coller le dossier MobileDevice.framework dans le dossier PrivateFrameworks
+
+Et je ne crois même pas qu'il soit nécessaire de redémarrer ! 
